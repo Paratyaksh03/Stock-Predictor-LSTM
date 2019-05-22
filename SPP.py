@@ -20,6 +20,13 @@ dataset = pd.read_csv('AAPL_2.csv', usecols=[0,1,2,3,4],error_bad_lines=False)
 dataset = dataset.reindex(index = dataset.index[::-1])
 print(dataset)
 
+# CODE FOR 1 MIN AND 5 MIN DATA
+"""
+dataset['Date_Time'] = pd.to_datetime(dataset['Date'] + ' ' + dataset['Time'])
+dataset.set_index(['Date_Time'])
+# YOU CAN DROP THE IRRELEVANT COLUMNS AFTER THIS CODE AND MAKE SURE TO ACCOMODATE THESE CHANGES TO THE PLOTTING BLOCK
+"""
+
 # CREATING OWN INDEX FOR FLEXIBILITY
 obs = np.arange(1, len(dataset) + 1, 1)
 
